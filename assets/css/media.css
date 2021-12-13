@@ -11,6 +11,7 @@
     :root {
         --bg: white;
         --text: black;
+        --border: #EBEBEB;
     }
 }
 
@@ -18,5 +19,6 @@
     :root {
         --bg: #202020;
         --text: white;
+        --border: #3A3A3A;
     }
 }

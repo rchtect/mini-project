@@ -2,9 +2,26 @@
   margin: 0;
   padding: auto;
 }
+::-webkit-input-placeholder {
+  text-align: center;
+}
+
+:-moz-placeholder {
+  /* Firefox 18- */
+  text-align: center;
+}
+
+::-moz-placeholder {
+  /* Firefox 19+ */
+  text-align: center;
+}
+
+:-ms-input-placeholder {
+  text-align: center;
+}
 
 html * {
-    font-family: 'Noto Sans', sans-serif !important;
+  font-family: "Noto Sans", sans-serif !important;
 }
 
 .container {
@@ -16,9 +33,9 @@ html * {
 }
 
 .left {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   width: 50%;
   height: 100%;
   background-color: var(--bg);
@@ -26,9 +43,9 @@ html * {
 .right {
   width: 50%;
   height: 100%;
-  background-color: #2E3A5F;
+  background-color: #2e3a5f;
 }
 
 h3 {
-    font-weight: lighter;
+  font-weight: lighter;
 }
