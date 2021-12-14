@@ -3,6 +3,7 @@ window.addEventListener("load", main);
 /** The start of the program */
 function main() {
   startClock();
+  getFullDate();
 }
 
 /** Keeps the time updated on the page */
@@ -64,4 +65,17 @@ function getCurrentTimeString(date) {
   }
 
   return hours + ":" + minutes;
+}
+
+function getFullDate() {
+  const fullDate = document.getElementById("full-date");
+
+  const today = new Date();
+  const month = today.getMonth() + 1;
+  const year = today.getFullYear();
+  const date = today.getDate();
+
+  const currentFullDate = year + "/" + month + "/" + date;
+
+  fullDate.innerHTML = currentFullDate;
 }
