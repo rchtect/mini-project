@@ -15,6 +15,7 @@
       href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400&display=swap"
       rel="stylesheet"
     />
+    <script src="./scripts/today.js"></script>
     <script
       src="https://kit.fontawesome.com/3fb8eeb048.js"
       crossorigin="anonymous"
@@ -25,39 +26,40 @@
       <div class="left">
         <div class="todo-wrapper">
           <div class="top">
-            <h2>Date</h2>
-            <h3>Time</h3>
+            <h2 id="weekday"></h2>
+            <h3 id="time"></h3>
           </div>
           <div class="title-section">
             <h1 class="title">Minima</h1>
             <h3>Full-date</h3>
           </div>
-            <input
-              type="text"
-              placeholder="What do you want to accomplish today?"
-            />
-            <ul class="todos">
-              <li class="todo-item uncomplete-border">
-                <span class="dot uncomplete-color">
-                  <span class="inner-dot">
-                    <i class="fas fa-check icon"></i>
-                  </span>
+          <input
+            type="text"
+            placeholder="What do you want to accomplish today?"
+          />
+          <ul class="todos">
+            <li class="todo-item uncomplete-border">
+              <span class="dot uncomplete-color">
+                <span class="inner-dot">
+                  <i class="fas fa-check icon"></i>
                 </span>
-                <span class="todo-title">Meet with ceo</span>
-                <i class="far fa-trash-alt icon bin"></i>
-              </li>
-              <li class="todo-item complete-border">
-                <span class="dot complete-color">
-                  <span class="inner-dot complete-color">
-                    <i class="fas fa-check icon complete-icon"></i>
-                  </span>
+              </span>
+              <span class="todo-title">Meet with ceo</span>
+              <i class="far fa-trash-alt icon bin"></i>
+            </li>
+            <li class="todo-item complete-border">
+              <span class="dot complete-color">
+                <span class="inner-dot complete-color">
+                  <i class="fas fa-check icon complete-icon"></i>
                 </span>
-                <span class="todo-title complete-text"
-                  >Work on the new project while taking some notes for my class</span
-                >
-                <i class="far fa-trash-alt icon bin"></i>
-              </li>
-            </ul>
+              </span>
+              <span class="todo-title complete-text"
+                >Work on the new project while taking some notes for my
+                class</span
+              >
+              <i class="far fa-trash-alt icon bin"></i>
+            </li>
+          </ul>
         </div>
       </div>
       <div class="right">
