@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="assets/css/main.css" />
     <link rel="stylesheet" href="./assets/css/todo.css" />
     <link rel="stylesheet" href="./assets/css/media.css" />
+    <link rel="stylesheet" href="./assets/css/calendar.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -16,6 +17,7 @@
       rel="stylesheet"
     />
     <script src="./scripts/today.js"></script>
+    <script src="./scripts/calendar.js"></script>
     <script
       src="https://kit.fontawesome.com/3fb8eeb048.js"
       crossorigin="anonymous"
@@ -63,7 +65,73 @@
         </div>
       </div>
       <div class="right">
-        <h1>Calendar</h1>
+        <div class="calendar">
+          <h1 id="currentMonth"></h1>
+          <div class="cal-wrapper">
+            <table>
+              <tr class="monthsRow">
+                <th>Week</th>
+                <th>M</th>
+                <th>T</th>
+                <th>W</th>
+                <th>T</th>
+                <th>F</th>
+                <th>S</th>
+                <th>S</th>
+              </tr>
+              <tr class="whiteTr">
+                <th id="currentWeek">28</th>
+                <th></th>
+                <th>1</th>
+                <th>2</th>
+                <th>3</th>
+                <th>4</th>
+                <th>5</th>
+                <th>6</th>
+              </tr>
+              <tr class="whiteTr">
+                <th>29</th>
+                <th>7</th>
+                <th>8</th>
+                <th>9</th>
+                <th>10</th>
+                <th>11</th>
+                <th>12</th>
+                <th>13</th>
+              </tr>
+              <tr class="whiteTr">
+                <th>30</th>
+                <th>14</th>
+                <th>15</th>
+                <th>16</th>
+                <th>17</th>
+                <th>18</th>
+                <th>19</th>
+                <th>20</th>
+              </tr>
+              <tr class="whiteTr">
+                <th>31</th>
+                <th>21</th>
+                <th>22</th>
+                <th>23</th>
+                <th>24</th>
+                <th>25</th>
+                <th>26</th>
+                <th>27</th>
+              </tr>
+              <tr class="whiteTr">
+                <th>32</th>
+                <th>28</th>
+                <th>29</th>
+                <th>30</th>
+                <th>31</th>
+                <th></th>
+                <th></th>
+                <th></th>
+              </tr>
+            </table>
+          </div>
+        </div>
       </div>
     </div>
   </body>
