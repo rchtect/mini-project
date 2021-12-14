@@ -67,6 +67,7 @@ function getCurrentTimeString(date) {
   return hours + ":" + minutes;
 }
 
+/** Adds full date to page */
 function getFullDate() {
   const fullDate = document.getElementById("full-date");
 
