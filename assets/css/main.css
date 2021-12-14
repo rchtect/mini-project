@@ -4,8 +4,8 @@
   padding: auto;
 }
 :root {
-  --accent: #6D83C7;
-  --complete: #6DC786;
+  --accent: #6d83c7;
+  --complete: #6dc786;
 }
 ::-webkit-input-placeholder {
   text-align: center;
@@ -17,10 +17,20 @@
 :-ms-input-placeholder {
   text-align: center;
 }
+
+html,
 body {
   overflow: hidden;
+  background: #2e3a5f;
 }
-p, h1, h2, h3, h4, h5, h6 {
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: "Noto Sans", sans-serif !important;
 }
 h3 {
@@ -50,5 +60,5 @@ h3 {
   align-items: center;
   width: 50%;
   height: 100vh;
-  background-color: #2e3a5f;
+  background: #2e3a5f;
 }

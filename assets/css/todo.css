@@ -73,62 +73,67 @@ input:focus {
   margin-top: 20px;
   padding-right: 10px;
 }
+
+.icon:hover {
+  cursor: pointer;
+}
+
 .icon {
-font-size: 20px;
+  font-size: 20px;
 }
 .bin {
-font-size: 30px;
-color: var(--accent);
-margin-right: 20px;
+  font-size: 30px;
+  color: var(--accent);
+  margin-right: 20px;
 }
 .dot {
-min-height: 45px;
-min-width: 45px;
-border-radius: 100%;
-display: flex;
-align-items: center;
-justify-content: center;
-flex-direction: column;
-margin-left: 10px;
+  min-height: 45px;
+  min-width: 45px;
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-left: 10px;
 }
 .inner-dot {
-display: flex;
-justify-content: center;
-align-items: center;
-border-radius: 100%;
-min-height: 35px;
-min-width: 35px;
-background-color: var(--bg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100%;
+  min-height: 35px;
+  min-width: 35px;
+  background-color: var(--bg);
 }
 .todo-title {
-font-family: "Noto Sans", sans-serif !important;
-font-weight: bolder;
-font-size: 20px;
-padding-left: 10px;
-padding-right: 10px;
+  font-family: "Noto Sans", sans-serif !important;
+  font-weight: bolder;
+  font-size: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 /*Uncompleted vs completed for todos*/
-    .uncomplete-color {
-    background-color: var(--accent);
-    color: var(--accent);
-    }
-    .uncomplete-border {
-    border-left: 4px solid var(--accent);
-    border-radius: 4px;
-    }
-    .complete-color {
-    background-color: var(--complete);
-    color: var(--complete);
-    }
-    .complete-border {
-    border-left: 4px solid var(--complete);
-    border-radius: 4px;
-    }
-    .complete-icon {
-    color: var(--bg);
-    }
-    .complete-text {
-    text-decoration: line-through;
-    color: grey;
-    }
+.uncomplete-color {
+  background-color: var(--accent);
+  color: var(--accent);
+}
+.uncomplete-border {
+  border-left: 4px solid var(--accent);
+  border-radius: 4px;
+}
+.complete-color {
+  background-color: var(--complete);
+  color: var(--complete);
+}
+.complete-border {
+  border-left: 4px solid var(--complete);
+  border-radius: 4px;
+}
+.complete-icon {
+  color: var(--bg);
+}
+.complete-text {
+  text-decoration: line-through;
+  color: grey;
+}
