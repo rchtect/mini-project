@@ -23,7 +23,7 @@ function renderClock() {
   weekdayElement.innerText = getCurrentWeekday(date);
 }
 /**
- * Takes a date and returns current weekday in swedish
+ * Takes a date and returns current weekday
  * @param {Date} date
  * @returns {String}
  */
