@@ -32,7 +32,8 @@ window.addEventListener("DOMContentLoaded", (event) => {
       todoEl.innerHTML += dot;
       todoEl.innerHTML += todoTitle;
       todoEl.innerHTML += bin;
-      todoEl.classList.add("uncomplete-border");
+        todoEl.classList.add("uncomplete-border");
+        // On refresh add completed prop
       if (todo && todo.completed) {
         todoEl.classList.add("complete-border");
         todoEl.querySelector("#dot").classList.add("complete-color");
@@ -41,15 +42,23 @@ window.addEventListener("DOMContentLoaded", (event) => {
         todoEl.querySelector("#todo-title").classList.add("complete-text");
       }
       todoEl.querySelector("#dot").addEventListener("click", () => {
-        todoEl.classList.remove("uncomplete-border");
-        todoEl.classList.add("complete-border");
-        todoEl.querySelector("#dot").classList.remove("uncomplete-color");
-        todoEl.querySelector("#dot").classList.add("complete-color");
-        todoEl.querySelector("#check").classList.add("complete-icon");
-        todoEl.querySelector("#inner-dot").classList.add("complete-color");
-        todoEl.querySelector("#inner-dot").classList.add("complete-color");
-        todoEl.querySelector("#todo-title").classList.add("complete-text");
-
+        if (todoEl.classList.contains("complete-border")) {
+          todoEl.classList.remove("complete-border");
+          todoEl.classList.add("uncomplete-border");
+          todoEl.querySelector("#dot").classList.remove("complete-color");
+          todoEl.querySelector("#dot").classList.add("uncomplete-color");
+          todoEl.querySelector("#check").classList.remove("complete-icon");
+          todoEl.querySelector("#inner-dot").classList.remove("complete-color");
+          todoEl.querySelector("#todo-title").classList.remove("complete-text");
+        } else {
+          todoEl.classList.remove("uncomplete-border");
+          todoEl.classList.add("complete-border");
+          todoEl.querySelector("#dot").classList.remove("uncomplete-color");
+          todoEl.querySelector("#dot").classList.add("complete-color");
+          todoEl.querySelector("#check").classList.add("complete-icon");
+          todoEl.querySelector("#inner-dot").classList.add("complete-color");
+          todoEl.querySelector("#todo-title").classList.add("complete-text");
+        }
         updateLS();
       });
 
@@ -59,6 +68,14 @@ window.addEventListener("DOMContentLoaded", (event) => {
         todoEl.remove();
         updateLS();
       });
+    //   Update list on drag event
+      document.querySelector(".todos").addEventListener(
+        "drag",
+        function (event) {
+          updateLS();
+        },
+        false
+      );
 
       todosUL.appendChild(todoEl);
 
@@ -79,7 +96,6 @@ window.addEventListener("DOMContentLoaded", (event) => {
         completed: todoEl.classList.contains("complete-border"),
       });
     });
-
     localStorage.setItem("todos", JSON.stringify(todos));
   }
 });
