@@ -59,7 +59,7 @@ input:focus {
   background-color: #2e3a5f;
   color: #fff;
   padding: 0.8rem;
-  width: 35%;
+  width: 7rem;
   font-weight: bold;
   font-size: 1rem;
   border-radius: 5px;
@@ -67,6 +67,7 @@ input:focus {
   display: flex;
   justify-content: center;
   align-items: center;
+  white-space: nowrap;
 }
 
 /*Todos, has ul todos and li todo-item*/
