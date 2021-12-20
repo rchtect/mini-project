@@ -44,6 +44,32 @@ input {
 input:focus {
   outline: none;
 }
+
+/* Buttons */
+.buttons-container {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.buttons {
+  border: none;
+  background-color: #2e3a5f;
+  color: #fff;
+  padding: 0.8rem;
+  width: 7rem;
+  font-weight: bold;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  white-space: nowrap;
+}
+
 /*Todos, has ul todos and li todo-item*/
 .todos {
   overflow-y: scroll;
