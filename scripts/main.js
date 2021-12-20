@@ -4,7 +4,6 @@ document.addEventListener("DOMContentLoaded", (event) => {
     for (var i = 0; i < date.length; i++) {
         date[i].addEventListener("click", function (event) {
             localStorage.setItem("date", currentDate);
-            localStorage.setItem("loaded", true);
     });
     }
   today();
