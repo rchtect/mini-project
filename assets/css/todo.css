@@ -54,8 +54,8 @@ input:focus {
   justify-content: space-between;
 }
 
-.buttons {
-  border: none;
+.all-buttons {
+  border: 0px solid black;
   background-color: #2e3a5f;
   color: #fff;
   padding: 0.8rem;
@@ -68,6 +68,12 @@ input:focus {
   justify-content: center;
   align-items: center;
   white-space: nowrap;
+  transition: ease-in-out 150ms;
+}
+
+.all-buttons:hover {
+  background-color: var(--accent);
+  transition: ease-in-out 150ms;
 }
 
 /*Todos, has ul todos and li todo-item*/
