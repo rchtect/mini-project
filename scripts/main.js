@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
             localStorage.setItem("date", currentDate);
             localStorage.setItem("loaded", true);
     });
-  }
+    }
   today();
   sortable();
   todo();

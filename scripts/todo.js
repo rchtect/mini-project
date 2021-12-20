@@ -30,9 +30,9 @@ function todo() {
       todoEl.innerHTML += dot;
       todoEl.innerHTML += todoTitle;
       todoEl.innerHTML += bin;
-      todoEl.setAttribute('data-date', currentDate);
-        todoEl.classList.add("uncomplete-border");
-        // On refresh add completed prop
+      todoEl.setAttribute("data-date", currentDate);
+      todoEl.classList.add("uncomplete-border");
+      // On refresh add completed prop
       if (todo && todo.completed) {
         todoEl.classList.add("complete-border");
         todoEl.querySelector("#dot").classList.add("complete-color");
@@ -66,7 +66,15 @@ function todo() {
         todoEl.remove();
         updateLS();
       });
-    //   Update list on drag event
+
+      document.querySelector(".delete-btn").addEventListener("click", (e) => {
+        e.preventDefault();
+        todoEl.remove();
+        empty = [];
+        localStorage.setItem("todos", JSON.stringify(empty));
+      });
+
+      //   Update list on drag event
       document.querySelector(".todos").addEventListener(
         "drag",
         function (event) {
@@ -89,18 +97,11 @@ function todo() {
 
     const todos = [];
     todosEl.forEach((todoEl) => {
-      if (currentDate != "") {
-        todos.push({
-          text: todoEl.innerText,
-          completed: todoEl.classList.contains("complete-border"),
-          date: todoEl.dataset.date
-        })
-      } else {
-        todos.push({
-          text: todoEl.innerText,
-          completed: todoEl.classList.contains("complete-border"),
-        });
-      }
+      todos.push({
+        text: todoEl.innerText,
+        completed: todoEl.classList.contains("complete-border"),
+        date: todoEl.dataset.date,
+      });
     });
     localStorage.setItem("todos", JSON.stringify(todos));
   }
