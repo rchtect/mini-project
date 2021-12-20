@@ -6,6 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Minima</title>
     <link rel="icon" type="image/x-icon" href="./assets/img/favicon.svg" />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.14.0/Sortable.min.js"
+      integrity="sha512-zYXldzJsDrNKV+odAwFYiDXV2Cy37cwizT+NkuiPGsa9X1dOz04eHvUWVuxaJ299GvcJT31ug2zO4itXBjFx4w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
     <link rel="stylesheet" href="assets/css/main.css" />
     <link rel="stylesheet" href="./assets/css/todo.css" />
     <link rel="stylesheet" href="./assets/css/media.css" />
@@ -18,6 +24,8 @@
     />
     <script src="./scripts/today.js"></script>
     <script src="./scripts/calendar.js"></script>
+    <script src="./scripts/todo.js"></script>
+    <script src="./scripts/sortable.js"></script>
     <script
       src="https://kit.fontawesome.com/3fb8eeb048.js"
       crossorigin="anonymous"
@@ -35,37 +43,21 @@
             <h1 class="title">Minima</h1>
             <h3 id="full-date"></h3>
           </div>
-          <input
-            type="text"
-            placeholder="What do you want to accomplish today?"
-          />
-          <div class="buttons-container">
+          <form id="form">
+            <input
+              type="text"
+              class="input"
+              id="input"
+              placeholder="What do you want to accomplish today?"
+              autocomplete="off"
+            />
+            <div class="buttons-container">
             <button class="buttons complete-btn">Complete all</button>
             <button class="buttons delete-btn">Delete all</button>
           </div>
-          <ul class="todos">
-            <li class="todo-item uncomplete-border">
-              <span class="dot uncomplete-color">
-                <span class="inner-dot">
-                  <i class="fas fa-check icon"></i>
-                </span>
-              </span>
-              <span class="todo-title">Meet with ceo</span>
-              <i class="far fa-trash-alt icon bin"></i>
-            </li>
-            <li class="todo-item complete-border">
-              <span class="dot complete-color">
-                <span class="inner-dot complete-color">
-                  <i class="fas fa-check icon complete-icon"></i>
-                </span>
-              </span>
-              <span class="todo-title complete-text"
-                >Work on the new project while taking some notes for my
-                class</span
-              >
-              <i class="far fa-trash-alt icon bin"></i>
-            </li>
-          </ul>
+            <ul class="todos" id="todos"></ul>
+          </form>
+>>>>>>> main
         </div>
       </div>
       <div class="right">
