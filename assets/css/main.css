@@ -2,6 +2,7 @@
 * {
   margin: 0;
   padding: auto;
+  transition: all 150ms;
 }
 :root {
   --accent: #6d83c7;
