@@ -1,10 +1,8 @@
-window.addEventListener("DOMContentLoaded", (event) => {
+function todo() {
   const form = document.getElementById("form");
   const input = document.getElementById("input");
   const todosUL = document.getElementById("todos");
-
   const todos = JSON.parse(localStorage.getItem("todos"));
-
   if (todos) {
     todos.forEach((todo) => addTodo(todo));
   }
@@ -32,6 +30,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
       todoEl.innerHTML += dot;
       todoEl.innerHTML += todoTitle;
       todoEl.innerHTML += bin;
+      todoEl.setAttribute('data-date', currentDate);
         todoEl.classList.add("uncomplete-border");
         // On refresh add completed prop
       if (todo && todo.completed) {
@@ -64,7 +63,6 @@ window.addEventListener("DOMContentLoaded", (event) => {
 
       todoEl.querySelector("#bin").addEventListener("click", (e) => {
         e.preventDefault();
-
         todoEl.remove();
         updateLS();
       });
@@ -76,6 +74,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
         },
         false
       );
+      // Delete all function
 
       todosUL.appendChild(todoEl);
 
@@ -89,13 +88,20 @@ window.addEventListener("DOMContentLoaded", (event) => {
     todosEl = document.querySelectorAll("li");
 
     const todos = [];
-
     todosEl.forEach((todoEl) => {
-      todos.push({
-        text: todoEl.innerText,
-        completed: todoEl.classList.contains("complete-border"),
-      });
+      if (currentDate != "") {
+        todos.push({
+          text: todoEl.innerText,
+          completed: todoEl.classList.contains("complete-border"),
+          date: todoEl.dataset.date
+        })
+      } else {
+        todos.push({
+          text: todoEl.innerText,
+          completed: todoEl.classList.contains("complete-border"),
+        });
+      }
     });
     localStorage.setItem("todos", JSON.stringify(todos));
   }
-});
+}

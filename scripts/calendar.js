@@ -1,5 +1,3 @@
-window.addEventListener("load", main);
-
 const month = [
   "January",
   "February",
@@ -15,8 +13,9 @@ const month = [
   "December",
 ];
 
-function main() {
+function calendar() {
   const newData = new Date();
   let monthName = month[newData.getMonth()];
   document.getElementById("currentMonth").innerHTML = monthName;
+  
 }
