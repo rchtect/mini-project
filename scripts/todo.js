@@ -2,7 +2,7 @@ function todo() {
   const form = document.getElementById("form");
   const input = document.getElementById("input");
   const todosUL = document.getElementById("todos");
-  const todos = JSON.parse(localStorage.getItem("todos"));
+  const todos = JSON.parse(localStorage.getItem("todos" + JSON.parse(localStorage.getItem("date"))));
   if (todos) {
     todos.forEach((todo) => addTodo(todo));
   }
@@ -10,6 +10,7 @@ function todo() {
   form.addEventListener("submit", (e) => {
     e.preventDefault();
     addTodo();
+    updateLS();
   });
 
   function addTodo(todo) {
@@ -30,7 +31,6 @@ function todo() {
       todoEl.innerHTML += dot;
       todoEl.innerHTML += todoTitle;
       todoEl.innerHTML += bin;
-      todoEl.setAttribute("data-date", currentDate);
       todoEl.classList.add("uncomplete-border");
       // On refresh add completed prop
       if (todo && todo.completed) {
@@ -40,6 +40,16 @@ function todo() {
         todoEl.querySelector("#inner-dot").classList.add("complete-color");
         todoEl.querySelector("#todo-title").classList.add("complete-text");
       }
+      if (todo && todo.date) {
+
+      } else {
+        if (currentDate == "") {
+          todoEl.setAttribute("data-date", " ")
+        } else {
+          todoEl.setAttribute("data-date", currentDate)
+        }
+      }
+
       todoEl.querySelector("#dot").addEventListener("click", () => {
         if (todoEl.classList.contains("complete-border")) {
           todoEl.classList.remove("complete-border");
@@ -71,7 +81,7 @@ function todo() {
         e.preventDefault();
         todoEl.remove();
         empty = [];
-        localStorage.setItem("todos", JSON.stringify(empty));
+        localStorage.setItem("todos" + JSON.parse(localStorage.getItem("date")), JSON.stringify(empty));
       });
 
       //   Update list on drag event
@@ -87,14 +97,11 @@ function todo() {
       todosUL.appendChild(todoEl);
 
       input.value = "";
-
-      updateLS();
     }
   }
 
   function updateLS() {
     todosEl = document.querySelectorAll("li");
-
     const todos = [];
     todosEl.forEach((todoEl) => {
       todos.push({
@@ -103,6 +110,7 @@ function todo() {
         date: todoEl.dataset.date,
       });
     });
-    localStorage.setItem("todos", JSON.stringify(todos));
+    localStorage.setItem("todos" + JSON.parse(localStorage.getItem("date")), JSON.stringify(todos));
   }
 }
+
