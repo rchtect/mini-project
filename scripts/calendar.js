@@ -18,5 +18,4 @@ function calendar() {
   const newData = new Date();
   let monthName = month[newData.getMonth()];
   document.getElementById("currentMonth").innerHTML = monthName;
-  currentDate = JSON.parse(localStorage.getItem("date"))
 }
