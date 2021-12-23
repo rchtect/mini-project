@@ -11,6 +11,7 @@ function todo() {
     e.preventDefault();
     addTodo();
     updateLS();
+    window.location.reload();
   });
 
   function addTodo(todo) {

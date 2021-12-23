@@ -7,6 +7,13 @@ document.addEventListener("DOMContentLoaded", (event) => {
         date[i].addEventListener("click", function (event) {
           localStorage.setItem("date", currentDate);
         });
+        // todoAmount = JSON.parse(localStorage.getItem())
+        let a = date[i].innerText
+        if (JSON.parse(localStorage.getItem(`todos${a}`)) != null) {
+          let showAllTodo = document.createElement("span")
+          showAllTodo.classList.add("totalTodo")
+          date[i].appendChild(showAllTodo).innerText = JSON.parse(localStorage.getItem(`todos${a}`)).length
+        }
   }
   calendar();
   today();
