@@ -1,5 +1,8 @@
 # mini-project
 
-Vi har skapat ett verktyg som vi kallar för Minima. Minima fungerar som en kalender och todo lista, där man kan sätta upp todos kopplade till datum.
+Project description:
+Build a tool where the user can create and schedule todos. The tool should display a list of todos and a calendar.
 
-Skapad av: Isaaq, Kawan, Ella
+[Demo](https://rchtect.github.io/mini-project/)
+
+Made by: [Isaaq](https://github.com/rchtect) [Kawan](https://github.com/Kawium) [Ella](https://github.com/EllaMiri)
