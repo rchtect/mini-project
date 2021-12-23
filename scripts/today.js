@@ -1,13 +1,15 @@
 /** The start of the program */
 function today() {
   startClock();
-  getFullDate();
 }
 
-/** Keeps the time updated on the page */
+/** Keeps the time and date updated on the page */
 function startClock() {
   renderClock();
   setInterval(renderClock, 1000);
+
+  getFullDate();
+  setInterval(getFullDate, 1000);
 }
 
 /** Updates the page with current time and weekday */
@@ -47,9 +49,9 @@ function getCurrentWeekday(date) {
 }
 
 /**
- * Constructs the time string from a date, includes seconds
+ * Constructs the time string from a date
  * @param {Date} date
- * @returns {String} in format HH:mm:ss
+ * @returns {String} in format HH:mm
  */
 function getCurrentTimeString(date) {
   let hours = date.getHours();
