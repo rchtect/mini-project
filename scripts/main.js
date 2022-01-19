@@ -11,7 +11,9 @@ document.addEventListener("DOMContentLoaded", (event) => {
         if (JSON.parse(localStorage.getItem(`todos${a}`)) != null) {
           let showAllTodo = document.createElement("span")
           showAllTodo.classList.add("totalTodo")
-          date[i].appendChild(showAllTodo).innerText = JSON.parse(localStorage.getItem(`todos${a}`)).length
+          if (JSON.parse(localStorage.getItem(`todos${a}`)).length > 0) {
+            date[i].appendChild(showAllTodo).innerText = JSON.parse(localStorage.getItem(`todos${a}`)).length
+          }
         }
   }
   calendar();

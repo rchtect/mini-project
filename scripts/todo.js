@@ -2,8 +2,10 @@ function todo() {
   const form = document.getElementById("form");
   const input = document.getElementById("input");
   const todosUL = document.getElementById("todos");
-  let currentDate = JSON.parse(localStorage.getItem("date"))
-  const todos = JSON.parse(localStorage.getItem("todos" + JSON.parse(localStorage.getItem("date"))));
+  let currentDate = JSON.parse(localStorage.getItem("date"));
+  const todos = JSON.parse(
+    localStorage.getItem("todos" + JSON.parse(localStorage.getItem("date")))
+  );
   if (todos) {
     todos.forEach((todo) => addTodo(todo));
   }
@@ -43,12 +45,11 @@ function todo() {
         todoEl.querySelector("#todo-title").classList.add("complete-text");
       }
       if (todo && todo.date) {
-
       } else {
         if (currentDate == "") {
-          todoEl.setAttribute("data-date", " ")
+          todoEl.setAttribute("data-date", " ");
         } else {
-          todoEl.setAttribute("data-date", currentDate)
+          todoEl.setAttribute("data-date", currentDate);
         }
       }
 
@@ -77,13 +78,18 @@ function todo() {
         e.preventDefault();
         todoEl.remove();
         updateLS();
+        window.location.reload();
       });
 
       document.querySelector(".delete-btn").addEventListener("click", (e) => {
         e.preventDefault();
         todoEl.remove();
         empty = [];
-        localStorage.setItem("todos" + JSON.parse(localStorage.getItem("date")), JSON.stringify(empty));
+        localStorage.setItem(
+          "todos" + JSON.parse(localStorage.getItem("date")),
+          JSON.stringify(empty)
+        );
+        window.location.reload();
       });
 
       //   Update list on drag event
@@ -112,8 +118,9 @@ function todo() {
         date: todoEl.dataset.date,
       });
     });
-    localStorage.setItem("todos" + JSON.parse(localStorage.getItem("date")), JSON.stringify(todos));
+    localStorage.setItem(
+      "todos" + JSON.parse(localStorage.getItem("date")),
+      JSON.stringify(todos)
+    );
   }
 }
-
-
